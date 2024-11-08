@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>مولد العبارات السرية BIP-39</title> <!-- رابط آخر لتحميل مكتبة bip39 --> 
+  <script src="https://unpkg.com/bip39"></script> 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    p {
+      font-size: 18px;
+      color: #333;
+      text-align: center;
+      margin-top: 20px;
+      padding: 0 15px;
+    }
+  </style> 
+ </head> 
+ <body> 
+  <h1>مولد العبارات السرية BIP-39</h1> <button onclick="generatePhrase()">توليد عبارة سرية جديدة</button> 
+  <p id="phrase">اضغط على الزر لتوليد عبارة سرية.</p> 
+  <script>
+    function generatePhrase() {
+      // توليد عبارة سرية مكونة من 12 كلمة
+      const mnemonic = bip39.generateMnemonic(128); 
+      document.getElementById('phrase').innerText = mnemonic;
+    }
+  </script> 
+ 
+</body></html>
